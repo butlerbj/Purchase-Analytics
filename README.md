@@ -98,12 +98,26 @@ department_id,number_of_orders,number_of_first_orders,percentage
 I used Python 3.7.3 to complete this coding challenge, and opted for a straight-forward solution to the problem. As noted in the [problem](README.md#problem), I could not use any external packages or libraries
 to complete the challenge. 
 
-`purchase_analytics.py` uses three modules from the [The Python Standard Library](https://docs.python.org/3/library/index.html): `csv`, `operator`, and `collections`.
+The source file `purchase_analytics.py` uses three modules from the [Python Standard Library](https://docs.python.org/3/library/index.html): `csv`, `operator`, and `collections`.
 
-I read in the two input data sources, `order_products.csv` and `products.csv`, as lists of lists using the `csv` module. From there, I constructed a series of dictionaries that mapped
-the product_id and department_id values to the their respective totals.
+I read in the two input data sources, `order_products.csv` and `products.csv`, as lists of lists using the `csv` module. I constructed a series of dictionaries and iterated through them in order to map the product_id and department_id values to the their respective values (i.e., `number_of_orders`, `number_of_first_orders`, and `percentage`).
 
 ## Run instructions
+
+You can run the test with the following command from within the `insight_testsuite` folder:
+
+    insight_testsuite~$ ./run_tests.sh
+
+On success, the output of `run_tests.sh` should look similar to
+
+    [PASS]: test_1
+    [Thu Mar 30 16:25:57 PDT 2017] 1 of 1 tests passed
+
+
+On failure:
+
+    [FAIL]: test_1
+    [Thu Mar 30 16:28:01 PDT 2017] 0 of 1 tests passed
 ## Running the tests
 ## Limitations and future directions
 
