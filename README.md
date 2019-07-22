@@ -136,6 +136,8 @@ Lastly, although I did modularize some of the repeated code in functions, I can 
 
 This repository was created as part of the 2019 Insight Los Angeles Data Engineering Fellows Program coding challenge. Using Instacart orders data, I wrote a program that calculated, for each department, the number of times a product was requested, the number of times a product was requested for the first time, and a ratio of those two numbers.
 
+Thank you for reading!
+
 ## Author
 
 * [Brendon Jerome Butler](https://github.com/butlerbj) -- [website](https://brendonjeromebutler.com)
