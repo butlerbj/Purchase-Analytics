@@ -2,7 +2,7 @@ import csv
 from operator import itemgetter
 from collections import defaultdict
 
-with open('order_products__prior.csv') as f:
+with open('./input/order_products.csv') as f:
     reader = csv.reader(f)
     header = next(reader)
     order_products = [header] + [[int(number) for number in row] for row in reader]
@@ -10,7 +10,7 @@ orders = order_products[1:]
 orders.sort(key=lambda x: x[1])
 
 # make product list
-with open('products.csv') as f:
+with open('./input/products.csv') as f:
     reader = csv.reader(f)
     header = next(reader)
     products = [row for row in reader]
@@ -180,7 +180,7 @@ header = [['department_id', 'number_of_orders',
 csv_data = list()
 csv_data.append(header)
 csv_data.append(output_list)
-with open('report.csv', 'w') as csv_file:
+with open('./output/report.csv', 'w') as csv_file:
     writer = csv.writer(csv_file)
     writer.writerows(header)
     writer.writerows(output_list)
