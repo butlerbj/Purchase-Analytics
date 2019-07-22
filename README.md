@@ -95,8 +95,13 @@ department_id,number_of_orders,number_of_first_orders,percentage
 
 ## Approach
 
-I used Python 3.7.3 to complete this coding challenge, and opted for a straight-forward solution to the problem. I read in the two input data sources, `order_products.csv` and `products.csv`, as lists of lists using the
-`csv` module. 
+I used Python 3.7.3 to complete this coding challenge, and opted for a straight-forward solution to the problem. As noted in the [problem](README.md#problem), I could not use any external packages or libraries
+to complete the challenge. 
+
+`purchase_analytics.py` uses three modules from the [The Python Standard Library](https://docs.python.org/3/library/index.html): `csv`, `operator`, and `collections`.
+
+I read in the two input data sources, `order_products.csv` and `products.csv`, as lists of lists using the `csv` module. From there, I constructed a series of dictionaries that mapped
+the product_id and department_id values to the their respective totals.
 
 ## Run instructions
 ## Running the tests
