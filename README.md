@@ -1,5 +1,5 @@
 # Purchase-Analytics
-Welcome to repo for the Insight Data Engineering coding challenge!
+Welcome to my repo for the 2019 Insight Los Angeles Data Engineering Fellows Program coding challenge!
 
 ## Table of Contents
 1. [Problem](README.md#problem)
@@ -7,7 +7,8 @@ Welcome to repo for the Insight Data Engineering coding challenge!
 1. [Approach](README.md#approach)
 1. [Run instructions](README.md#run-instructions)
 1. [Running the tests](README.md#running-the-tests)
-1. [Limitations and future directions](README.md#limitations-and-future-directions)
+1. [Limitations and future directions](README.md#limitations-and-room-for-improvement)
+1. [Summary](README.md#summary)
 1. [Author](README.md#author)
 
 ## Problem
@@ -124,11 +125,17 @@ Or on failure:
     [FAIL]: test_1
     [Thu Mar 30 16:28:01 PDT 2017] 0 of 1 tests passed
 	
-## Limitations and future directions
+## Limitations and room for improvement
 
+I tested the program using the provided `order_products.csv`, as well as `order_products__train.csv` and `order_products__prior.csv` which were also published by Instacart. 
 
-Explain how to run the automated tests for this system
+Although the program works well against the provided input data sets, there are several ways I could improve the code. First, I would better-handle errors and exceptions so that the user will have useful information on how to respond when they arrive. Second, I would would make the code more performant; as it stands, the program is slow to execute on `order_products__prior.csv` (which contains 32,434,489 rows!). One area to look for improvement is to utilize more of the container datatypes in the `collections` module, as well as loop more effieciently using some of iterators and generators in the `itertools` module.
+Lastly, although I did bundle some of the repeated code in functions, I can further this by creating additional functions and classes.
+
+## Summary
+
+This repository was created as part of the 2019 Insight Los Angeles Data Engineering Fellows Program coding challenge. Using Instacart orders data, I wrote a program that calculated, for each department, the number of times a product was requested, the number of times a product was requested for the first time, and a ratio of those two numbers.
 
 ## Author
 
-* [Brendon Jerome Butler](https://github.com/butlerbj)
+* [Brendon Jerome Butler](https://github.com/butlerbj) -- [website](https://brendonjeromebutler.com)
