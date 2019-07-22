@@ -3,12 +3,12 @@ Welcome to repo for the Insight Data Engineering coding challenge!
 
 ## Table of Contents
 1. [Problem](README.md#problem)
-1. [Steps to submit your solution](README.md#steps-to-submit-your-solution)
-1. [Input Dataset](README.md#input-dataset)
-1. [Instructions](README.md#instructions)
-1. [Output](README.md#output)
-1. [Tips on getting an interview](README.md#tips-on-getting-an-interview)
-1. [Questions?](README.md#questions?)
+1. [I/O](README.md#io)
+1. [Approach](README.md#approach)
+1. [Run instructions](README.md#run-instructions)
+1. [Running the tests](README.md#running-the-tests)
+1. [Limitations and future directions](README.md#instructions)
+1. [Author](README.md#author)
 
 ## Problem
 
@@ -18,7 +18,7 @@ For this challenge, I was required to calculate, for each department, the number
 
 ## I/O
 
-### Input Datasets
+### Input datasets
 
 For this challenge, we have two separate input data sources, `order_products.csv` and `products.csv`.
 
@@ -66,7 +66,7 @@ where
 * `department_id`: identifier of department
 
 
-### Expected Output
+### Expected output
 
 Given the two input files in the input directory, the program will create an output file, `report.csv`, in the output directory that, for each department, surfaces the following statistics:
 
@@ -95,14 +95,16 @@ department_id,number_of_orders,number_of_first_orders,percentage
 
 ## Approach
 
-I used Python 3.7.3 to complete this coding challenge, and opted for a straight-forward solution to the problem. 
+I used Python 3.7.3 to complete this coding challenge, and opted for a straight-forward solution to the problem. I read in the two input data sources, `order_products.csv` and `products.csv`, as lists of lists using the
+`csv` module. 
 
-
-## Limitations and Future Directions
+## Run instructions
 ## Running the tests
+## Limitations and future directions
+
 
 Explain how to run the automated tests for this system
 
-## Authors
+## Author
 
 * [Brendon Jerome Butler](https://github.com/butlerbj)
