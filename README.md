@@ -130,7 +130,7 @@ Or on failure:
 I tested the program using the provided `order_products.csv`, as well as `order_products__train.csv` and `order_products__prior.csv` which were also published by Instacart. 
 
 Although the program works well against the provided input data sets, there are several ways I could improve the code. First, I would better-handle errors and exceptions so that the user will have useful information on how to respond when they arrive. Second, I would would make the code more performant; as it stands, the program is slow to execute on `order_products__prior.csv` (which contains 32,434,489 rows!). One area to look for improvement is to utilize more of the container datatypes in the `collections` module, as well as loop more effieciently using some of iterators and generators in the `itertools` module.
-Lastly, although I did bundle some of the repeated code in functions, I can further this by creating additional functions and classes.
+Lastly, although I did modularize some of the repeated code in functions, I can further refactor the code by creating additional functions and classes to make it more readable and modular.
 
 ## Summary
 
