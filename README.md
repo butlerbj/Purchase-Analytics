@@ -7,7 +7,7 @@ Welcome to repo for the Insight Data Engineering coding challenge!
 1. [Approach](README.md#approach)
 1. [Run instructions](README.md#run-instructions)
 1. [Running the tests](README.md#running-the-tests)
-1. [Limitations and future directions](README.md#instructions)
+1. [Limitations and future directions](README.md#limitations-and-future-directions)
 1. [Author](README.md#author)
 
 ## Problem
@@ -102,7 +102,13 @@ The source file `purchase_analytics.py` uses three modules from the [Python Stan
 
 I read in the two input data sources, `order_products.csv` and `products.csv`, as lists of lists using the `csv` module. I constructed a series of dictionaries and iterated through them in order to map the product_id and department_id values to the their respective values (i.e., `number_of_orders`, `number_of_first_orders`, and `percentage`).
 
-## Run instructions
+## Run insructions
+
+You can run the program with the following command from within the root folder:
+
+    Purchase-Analytics~$ ./run.sh
+
+## Running the tests
 
 You can run the test with the following command from within the `insight_testsuite` folder:
 
@@ -113,12 +119,11 @@ On success, the output of `run_tests.sh` should look similar to
     [PASS]: test_1
     [Thu Mar 30 16:25:57 PDT 2017] 1 of 1 tests passed
 
-
-On failure:
+Or on failure:
 
     [FAIL]: test_1
     [Thu Mar 30 16:28:01 PDT 2017] 0 of 1 tests passed
-## Running the tests
+	
 ## Limitations and future directions
 
 
