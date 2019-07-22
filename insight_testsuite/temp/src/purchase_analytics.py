@@ -2,6 +2,7 @@ import csv
 from operator import itemgetter
 from collections import defaultdict
 
+# read in 'order_products.csv' to a list of lists
 with open('./input/order_products.csv') as f:
     reader = csv.reader(f)
     header = next(reader)
@@ -9,15 +10,16 @@ with open('./input/order_products.csv') as f:
 orders = order_products[1:]
 orders.sort(key=lambda x: x[1])
 
-# make product list
+# read in 'order_products.csv' to a list of lists
 with open('./input/products.csv') as f:
     reader = csv.reader(f)
     header = next(reader)
     products = [row for row in reader]
     for row in products:
-        del row[1:3]
+        del row[1:3]  # delete rows that are unused
 
-# convert them to lists so we can store them in a dict easily
+# create two lists containing the products and its respective department
+# and combine them into one dictionary for easy indexing
 product_list = [row[0] for row in products]
 department = [row[1] for row in products]
 dept_prod_dict = dict(zip(product_list, department))
@@ -90,7 +92,6 @@ def build_dept_freq_table(dept_map, prod_freq_table):
 
     """
 
-    # kinds = {'total' : 1, 'first_orders' : 3}
     freq_table = dict()
 
     for key, value in dept_map.items():
@@ -164,24 +165,32 @@ def convert_for_writing(final_dict):
     return output_list
 
 
+# build two frequency tables containing the total purchases
+# and total first orders, by product_id
 purchase_totals = build_product_freq_table(orders, kind='total')
 first_order = build_product_freq_table(orders, kind='first_orders')
 
+# build two frequency tables containing the total purchases
+# and total first orders, by department_id
 totals_by_dept = build_dept_freq_table(dept_prod_dict, purchase_totals)
 first_by_dept = build_dept_freq_table(dept_prod_dict, first_order)
 
+# build the final dictionary containing the desired values:
+# number_of_orders, number_of_first_orders, and percentage
 final_dict = build_final_dict(totals_by_dept, first_by_dept)
 
+# convert the final dictionary to a list for easy writing to csv in desired
+# output format
 output_list = convert_for_writing(final_dict)
 
-header = [['department_id', 'number_of_orders',
+# write the output_list to csv, done!
+csv_header = [['department_id', 'number_of_orders',
            'number_of_first_orders', 'percentage']]
-
 csv_data = list()
-csv_data.append(header)
+csv_data.append(csv_header)
 csv_data.append(output_list)
 with open('./output/report.csv', 'w') as csv_file:
     writer = csv.writer(csv_file)
-    writer.writerows(header)
+    writer.writerows(csv_header)
     writer.writerows(output_list)
 csv_file.close()
